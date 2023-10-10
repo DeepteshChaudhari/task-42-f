@@ -26,7 +26,7 @@ function UrlList({ urlformdata }) {
 
   useEffect(() => {
     token && username ? getUrls(token) : navigate("/login");
-  }, []);
+  }, [updateUrls]);
 
   const deleteUrl = (id) => {
     deleteUrls(id, token);
