@@ -19,14 +19,14 @@ function UrlList({ urlformdata }) {
   useEffect(() => {
     socket = Io(url);
 
-    socket.on("clickCountUpdated", (urls) => {
-      updateUrls(urls);
+    socket.on("clickCountUpdated", (url) => {
+      updateUrls(url);
     });
   }, []);
 
   useEffect(() => {
     token && username ? getUrls(token) : navigate("/login");
-  }, [updateUrls]);
+  }, []);
 
   const deleteUrl = (id) => {
     deleteUrls(id, token);
